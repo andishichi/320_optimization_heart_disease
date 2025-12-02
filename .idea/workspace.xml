@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf393ca5-88c0-46cf-9cd3-2afdd465a688" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/algorithms/bfgs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithms/conjugate_gradient.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithms/newton.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/logistic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/logistic_lasso.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/logistic_ridge.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore.py" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/logistic_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/adam.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/logistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/logistic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/logistic_ridge.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/logistic_ridge.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notebooks/experiments.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/experiments.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +40,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.logistic.executor": "Run",
+    "Python.logistic_ridge.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
