@@ -9,7 +9,7 @@ import numpy as np
 def sigmoid(z):
     """
     sigmoid function -> sigma(z) = 1 / (1 + exp(-z)).
-    :param z: scalar or numpy array of shape (n_samples,).
+    :param z: scalar or numpy array of shape (n_samples, ).
     :returns: same shape as z, values in (0,1).
     """
     return 1 / (1 + np.exp(-z))
@@ -45,7 +45,7 @@ def logistic_grad(w, X, y):
     :param w: weight vector, shape (n_features, ).
     :param X: data matrix, shape (n_samples, n_features).
     :param y: vector of true labels, shape (n_samples, ).
-    :return: grad: shape (n_features, ).
+    :return: gradient: shape (n_features, ).
     """
 
     # linear scores
