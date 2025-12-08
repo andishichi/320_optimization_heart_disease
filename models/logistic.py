@@ -12,6 +12,8 @@ def sigmoid(z):
     :param z: scalar or numpy array of shape (n_samples, ).
     :returns: same shape as z, values in (0,1).
     """
+    # modified to avoid overflow when testing differing initial conditions
+    z = np.clip(z, -500, 500)
     return 1 / (1 + np.exp(-z))
 
 def logistic_loss(w, X, y):
