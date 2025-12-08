@@ -63,4 +63,28 @@ def logistic_grad(w, X, y):
 
     return grad
 
+def logistic_hess(w, X, y):
+    """
+    Hessian of the logistic loss with respect to w (weights).
+    :param w: weight vector, shape (n_features, ).
+    :param X: data matrix, shape (n_samples, n_features).
+    :param y: vector of true labels, shape (n_samples, ).
+    :return H: Hessian matrix, shape (n_features, n_features).
+    """
 
+    # linear scores
+    z = X @ w               # (n_samples, )
+
+    # predicted probabilities
+    p = sigmoid(z)          # (n_samples, )
+
+    # si = pi * (1-pi)
+    s = p * (1 - p)         # (n_samples, )
+
+    # want H = (1/n) X^T diag(s) X
+    # use broadcasing instead of building diagonals
+    # X^T * s has shape (n_features, n_samples)
+    n = len(y)
+    H = (X.T * s) @ X / n   # (n_features, n_features)
+
+    return H
