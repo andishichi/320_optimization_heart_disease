@@ -5,7 +5,7 @@ Description: A ridge logistic regression model.
 
 import numpy as np
 
-from models.logistic import logistic_loss, logistic_grad
+from models.logistic import logistic_loss, logistic_grad, logistic_hess
 
 def logistic_ridge_loss(w, X, y, alpha=1.0):
     """
@@ -40,9 +40,10 @@ def logistic_ridge_grad(w, X, y, alpha=1.0):
     :param w: weight vector, shape (n_features, ).
     :param X: data matrix, shape (n_samples, n_features).
     :param y: labels vector, shape (n_samples, ).
-    :param alpha: penalty term.
+    :param alpha: ridge penalty term.
     :return: grad
     """
+
     # splitting the weights
     bias = w[-1]            # added for clarity
     feature_weights = w[: -1]
@@ -55,3 +56,20 @@ def logistic_ridge_grad(w, X, y, alpha=1.0):
 
     return grad
 
+def logistic_ridge_hess(w, X, y, alpha=1.0):
+    """
+    Hessian of the ridge logistic regression.
+    :param w: weight vector, shape (n_features, ).
+    :param X: data matrix, shape (n_samples, n_features).
+    :param y: labels vector, shape (n_samples, ).
+    :param alpha: ridge penalty term.
+    :return H: Hessian matrix, shape (n_features, n_features).
+    """
+
+    H = logistic_hess(w, X, y)
+
+    # add alpha * I to the penalized weights (all except bias)
+    d = H.shape[0]
+    H[ :-1, :-1] += alpha * np.eye(d-1)
+
+    return H
